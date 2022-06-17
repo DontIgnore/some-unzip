@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "npx rollup --config"
+  },
   "dependencies": {
     "isomorphic-unzip": "^1.1.5",
     "unzip": "^0.1.11"
