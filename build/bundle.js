@@ -3328,11 +3328,15 @@
     const file = fileInput.files[0];
     if (!file) return;
     const zip = new zipBrowser(file);
-    zip.getBuffer(["test.html"], {}, (err, buffers) => {
-      if (err) console.error(err);
-      Object.keys(buffers).forEach(key => {
-        const buffer = buffers[key];
-        console.log(key, buffer.toString());
+    zip.getEntries((error, entries) => {
+      if (error) return console.error(error);
+      const fileNames = entries.map(entry => entry.filename);
+      zip.getBuffer(fileNames, {}, (error, buffers) => {
+        if (error) return console.error(error);
+        Object.keys(buffers).forEach(key => {
+          const buffer = buffers[key];
+          console.log(key, buffer.toString());
+        });
       });
     });
   });
