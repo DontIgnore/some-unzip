@@ -5,7 +5,10 @@
   },
   "dependencies": {
     "isomorphic-unzip": "^1.1.5",
-    "unzip": "^0.1.11"
+    "unzip": "^0.1.11",
+    "xlsx": "^0.18.5",
+    "xml": "^1.0.1",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.1",
