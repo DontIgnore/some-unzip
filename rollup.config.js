@@ -1,6 +1,7 @@
 import { nodeResolve as resolve } from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import babel from "@rollup/plugin-babel"
+import nodePolyfills from "rollup-plugin-polyfill-node"
 
 export default [
   {
@@ -8,7 +9,8 @@ export default [
     plugins: [
       babel(),
       resolve({ browser: true, preferBuiltins: false }),
-      commonjs(),
+      commonjs({ transformMixedEsModules: true }),
+      nodePolyfills(),
     ],
     output: {
       file: "./build/bundle.js",

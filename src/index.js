@@ -1,6 +1,9 @@
 import Unzip from "isomorphic-unzip"
 
+import xml from "xml"
 import * as XLSX from "xlsx"
+
+console.log(xml)
 
 import convert from "xml-js"
 
